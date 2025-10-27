@@ -1,4 +1,4 @@
-# 📘 Documentação - CriptoGuardian: O Legado de Turing
+# CriptoGuardian: O Legado de Turing
 
 ---
 
