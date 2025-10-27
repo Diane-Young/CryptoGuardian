@@ -10,7 +10,7 @@ Com a ajuda da IA **ALICE**, você deve proteger este legado digital.
 
 ---
 
-## 🧩 FASE 1: A DESCOBERTA DE TURING
+## FASE 1: A DESCOBERTA DE TURING
 
 **Desafio:** Cifra de César  
 **Problema:** Decifrar `"KDOI"` (3 posições para trás)
@@ -25,7 +25,7 @@ Com a ajuda da IA **ALICE**, você deve proteger este legado digital.
 
 ---
 
-## ⚙️ FASE 2: IA E CRIPTOGRAFIA MODERNA
+## FASE 2: IA E CRIPTOGRAFIA MODERNA
 
 **Desafio:** Operação XOR  
 **Problema:** `0110 ⊕ 1100 = ?`
@@ -40,7 +40,7 @@ Com a ajuda da IA **ALICE**, você deve proteger este legado digital.
 
 ---
 
-## 🔒 FASE 3: PROTEGENDO O LEGADO DIGITAL
+## FASE 3: PROTEGENDO O LEGADO DIGITAL
 
 **Desafio:** Decodificação Base64  
 **Problema:** Decodificar `"VHVyaW5n"`
@@ -74,7 +74,7 @@ Com a ajuda da IA **ALICE**, você deve proteger este legado digital.
 
 ---
 
-## 🎨 ELEMENTOS VISUAIS
+## ELEMENTOS VISUAIS
 
 **Objetos no Jogo:**
 
@@ -89,7 +89,7 @@ Com a ajuda da IA **ALICE**, você deve proteger este legado digital.
 
 ---
 
-## 📚 CONCEITOS ENSINADOS
+## CONCEITOS ENSINADOS
 
 ### 🔐 Criptografia:
 
@@ -118,5 +118,6 @@ mostrando a evolução desde métodos clássicos até aplicações modernas com 
 
 ## 👩‍💻 Desenvolvedores
 
-- **Diane Santos Silva Marasco de Oliveira** — Responsável pela **estrutura e desenvolvimento do código-fonte** do jogo, garantindo sua funcionalidade e lógica principal.
+- **Diane Santos Silva** — Responsável pela **estrutura e desenvolvimento do código-fonte** do jogo, garantindo sua funcionalidade e lógica principal.
 - **Luiz Galdino de Sousa Xavier Reche** — Responsável pela **direção de arte, design visual** e **criação da landing page**, que servirá como plataforma oficial de hospedagem e divulgação do jogo.
+- **Fábio da Silva Pereira Junior - Responsável pela **documentação do jogo e elaboração do relatório do projeto, reunindo todas as informações sobre o objetivo do jogo, público-alvo, mecânicas, instruções de jogo** definindo o propósito geral do projeto.
