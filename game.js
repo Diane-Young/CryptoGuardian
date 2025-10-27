@@ -80,7 +80,7 @@ function assetLoaded() {
             loadingScreen.style.display = 'none';
             gameState = GAME_STATES.MENU;
             player.sprite = playerSprites.front;
-            showAIMessage("👋 Olá! Eu sou a ALICE. Pressione ESPAÇO para começarmos nossa aula de criptografia!", 6000);
+            showAIMessage("👋 Olá! Eu sou a ALICE_IA. Pressione ESPAÇO para começarmos!", 6000);
         }, 1000);
     }
 }
@@ -315,11 +315,11 @@ const dialogs = {
     intro: [
         { 
             name: "ALICE_IA 🤖", 
-            text: "👋 Olá, estudante! Eu sou a ALICE, sua professora de criptografia. Preparei uma jornada especial sobre Alan Turing e segurança digital!" 
+            text: "👋 Olá! Eu sou a ALICE, sua assistente IA de criptografia. Preparei uma jornada especial sobre Alan Turing, IA e criptografia!" 
         },
         { 
             name: "ALICE_IA 🤖", 
-            text: "📚 Você descobriu que Turing não apenas quebrou códigos nazistas... ele criou os fundamentos teóricos da computação e IA que uso hoje!" 
+            text: "📚 Você descobriu que Turing não apenas quebrou códigos nazistas... ele criou os fundamentos teóricos que revolucionaram a computação e IA moderna!"
         },
         { 
             name: "ALICE_IA 🤖", 
@@ -421,7 +421,7 @@ function advancePhase() {
     currentPhase++;
     if (currentPhase > 3) {
         gameState = GAME_STATES.VICTORY;
-        showAIMessage("🏆 PARABÉNS! Você completou todo o curso de criptografia!\n\nAlan Turing ficaria orgulhoso! 🎓", 8000);
+        showAIMessage("🏆 PARABÉNS! Você completou o jogo de criptografia ligada a IA!\n\nAlan Turing ficaria orgulhoso! 🎓", 8000);
     } else {
         const phaseMessages = {
             2: "🎓 FASE 2: OPERAÇÃO XOR\n\nAprenda sobre lógica binária e resolva o desafio XOR!\nPressione H para meu guia completo!",
@@ -609,7 +609,7 @@ function drawMenu() {
     ctx.font = '18px Courier New';
     ctx.fillText('Aprenda criptografia com a ALICE IA!', canvas.width / 2, 260);
     ctx.fillText('Descubra como Alan Turing revolucionou', canvas.width / 2, 290);
-    ctx.fillText('a computação e a segurança digital.', canvas.width / 2, 320);
+    ctx.fillText('a computação.', canvas.width / 2, 320);
     
     // Instrução
     ctx.fillStyle = '#7209b7';
@@ -628,13 +628,13 @@ function drawVictory() {
     ctx.fillStyle = '#4cc9f0';
     ctx.font = 'bold 36px Courier New';
     ctx.textAlign = 'center';
-    ctx.fillText('🎓 CURSO COMPLETO!', canvas.width / 2, 150);
+    ctx.fillText('🎓 JOGO COMPLETO!', canvas.width / 2, 150);
     
     ctx.fillStyle = '#ffffff';
     ctx.font = '20px Courier New';
     ctx.fillText('Parabéns! Você dominou os fundamentos da criptografia!', canvas.width / 2, 220);
     ctx.fillText('Alan Turing ficaria orgulhoso do seu progresso.', canvas.width / 2, 260);
-    ctx.fillText('Continue estudando - o futuro da segurança digital precisa de você!', canvas.width / 2, 300);
+    ctx.fillText('Continue estudando - o futuro precisa de você!', canvas.width / 2, 300);
     
     ctx.fillStyle = '#f72585';
     ctx.font = 'bold 24px Courier New';
