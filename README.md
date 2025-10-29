@@ -1,12 +1,12 @@
 # 🔐 Criptografia & IA: O Legado de Turing
 
-## 🧠 Sobre o Jogo
+## Sobre o Jogo
 Um estagiário descobre que Alan Turing criou os fundamentos de uma IA revolucionária.  
 Com a ajuda da IA **ALICE**, o jogador precisa proteger esse legado resolvendo desafios de criptografia.
 
 ---
 
-## 🧩 Fases do Jogo
+## Fases do Jogo
 
 ### Fase 1 — A Descoberta de Turing
 **Desafio:** Cifra de César  
@@ -22,12 +22,12 @@ Com a ajuda da IA **ALICE**, o jogador precisa proteger esse legado resolvendo d
 
 ---
 
-## 🎮 Comandos
+## Comandos
 `WASD` mover • `E` interagir • `Enter` enviar • `H` ajuda • `ESC` cancelar  
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 Ensinar os fundamentos de **criptografia e inteligência artificial** de forma prática e interativa.
 
 ---
