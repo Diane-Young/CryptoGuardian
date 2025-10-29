@@ -305,3 +305,35 @@ body {
     50% { border-color: #f72585; box-shadow: 0 0 25px rgba(247, 37, 133, 0.8); }
     100% { border-color: #4cc9f0; box-shadow: 0 0 20px rgba(76, 201, 240, 0.6); }
 }
+
+/* ===== VERSÃO SIMPLES E PROPORCIONAL ===== */
+.dialog-box {
+    position: fixed;
+    top: 20% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1000;
+}
+
+.challenge-box {
+    position: fixed;
+    top: 30% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1000;
+}
+
+.ai-assistant {
+    position: fixed;
+    top: auto !important;
+    bottom: 10% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    max-width: 400px;
+    width: 90%;
+    z-index: 1000;
+}

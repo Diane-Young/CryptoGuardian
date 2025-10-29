@@ -160,7 +160,7 @@ function updatePlayer() {
     player.y = Math.max(0, Math.min(canvas.height - player.height, player.y));
 }
 
-// ===== SISTEMA DE INPUT =====
+// ===== SISTEMA DE INPUT ATUALIZADO =====
 const keys = {};
 
 window.addEventListener('keydown', (e) => {
@@ -181,9 +181,19 @@ window.addEventListener('keydown', (e) => {
         submitChallenge();
     }
     
-    // Cancelar desafio
-    if (e.key === 'Escape' && gameState === GAME_STATES.CHALLENGE) {
-        cancelChallenge();
+    // FECHAR COM ESC - SISTEMA COMPLETO
+    if (e.key === 'Escape') {
+        console.log("⎋ ESC pressionado - Estado atual:", gameState);
+        
+        if (gameState === GAME_STATES.CHALLENGE) {
+            cancelChallenge();
+        } else if (gameState === GAME_STATES.DIALOG) {
+            hideDialog();
+        } else if (aiAssistant.classList.contains('active')) {
+            hideAIMessage();
+        } else if (gameState === GAME_STATES.PLAYING) {
+            showAIMessage("🎮 Jogo em andamento... Pressione H para ajuda da Alice!", 3000);
+        }
     }
     
     // Pedir ajuda da Alice
@@ -358,10 +368,27 @@ function showNextDialog() {
     }
 }
 
+// ===== SISTEMA DE FECHAR =====
+
+function hideAIMessage() {
+    aiAssistant.classList.remove('active');
+    // Remove o botão de dica se existir
+    const hintBtn = document.getElementById('hintButton');
+    if (hintBtn) {
+        hintBtn.remove();
+    }
+    console.log("🗨️ Mensagem da AI fechada");
+}
+
 function hideDialog() {
     dialogBox.classList.remove('active');
     gameState = GAME_STATES.PLAYING;
-    showAIMessage("🎓 FASE 1: CIFRA DE CÉSAR\n\nEncontre os objetos VERDES para aprender e o ROXO para o desafio!\nPressione H se precisar de ajuda!", 7000);
+    console.log("💬 Diálogo fechado");
+    
+    // Mensagem de continuação apenas se for o diálogo inicial
+    if (currentDialog === dialogs.intro) {
+        showAIMessage("🎓 FASE 1: CIFRA DE CÉSAR\n\nEncontre os objetos VERDES para aprender e o ROXO para o desafio!\nPressione H se precisar de ajuda!", 7000);
+    }
 }
 
 function nextDialog() {
@@ -379,12 +406,18 @@ function startChallenge(obj) {
     challengeQuestion.textContent = obj.question;
     challengeInput.value = '';
     challengeBox.classList.add('active');
-    challengeInput.focus();
+    
+    // Focar no input após um pequeno delay
+    setTimeout(() => {
+        challengeInput.focus();
+    }, 100);
+    
+    console.log("🎯 Desafio iniciado:", obj.question.substring(0, 30) + "...");
     
     // Explicação inicial da Alice
     setTimeout(() => {
-        showAIMessage("🎓 DESAFIO " + currentPhase + " INICIADO!\n\nPressione H para dicas ou clique em 'Pedir Dica'!\nVou te guiar passo a passo! 💡", 5000);
-    }, 1000);
+        showAIMessage("🎓 DESAFIO " + currentPhase + " INICIADO!\n\n• Pressione H para dicas\n• ESC ou X para fechar\n• Enter para enviar resposta", 5000);
+    }, 500);
 }
 
 function submitChallenge() {
@@ -414,7 +447,8 @@ function cancelChallenge() {
     challengeBox.classList.remove('active');
     gameState = GAME_STATES.PLAYING;
     currentChallenge = null;
-    showAIMessage("Desafio pausado. Você pode retornar quando quiser!\nPressione H para ver o guia da fase.", 5000);
+    console.log("🎯 Desafio cancelado");
+    showAIMessage("⏸️ Desafio pausado. Volte quando quiser! Pressione H para ver o guia.", 4000);
 }
 
 function advancePhase() {
@@ -477,6 +511,8 @@ function showAIMessage(message, duration = 5000) {
     aiMessage.innerHTML = message.replace(/\n/g, '<br>');
     aiAssistant.classList.add('active');
     
+    console.log("🤖 AI Message:", message.substring(0, 50) + "...");
+    
     // Adicionar botão de dica se estiver em um desafio
     if (gameState === GAME_STATES.CHALLENGE && currentChallenge) {
         const existingHintBtn = document.getElementById('hintButton');
@@ -496,11 +532,14 @@ function showAIMessage(message, duration = 5000) {
         }
     }
     
-    setTimeout(() => {
-        if (aiMessage.textContent === message.replace(/\n/g, ' ')) {
-            aiAssistant.classList.remove('active');
-        }
-    }, duration);
+    // Auto-fechar após duração (exceto se for mensagem importante)
+    if (duration > 0) {
+        setTimeout(() => {
+            if (aiMessage.innerHTML === message.replace(/\n/g, '<br>')) {
+                hideAIMessage();
+            }
+        }, duration);
+    }
 }
 
 // ===== INICIALIZAÇÃO DO JOGO =====

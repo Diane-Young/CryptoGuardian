@@ -10,30 +10,37 @@
     <div id="gameContainer">
         <canvas id="gameCanvas" width="800" height="600"></canvas>
         
-        <!-- Caixa de Diálogo -->
-        <div id="dialogBox" class="dialog-box">
-            <div class="dialog-name" id="dialogName">ALICE_IA</div>
-            <div id="dialogText">Olá! Eu sou a ALICE, sua assistente de IA.</div>
+<!-- Dialogo -->
+<div id="dialogBox" class="dialog-box">
+    <div class="dialog-content">
+        <button class="close-btn" onclick="hideDialog()">×</button>
+        <h3 id="dialogName"></h3>
+        <p id="dialogText"></p>
+        <div class="dialog-buttons">
             <button class="pixel-button" onclick="nextDialog()">Continuar</button>
         </div>
+    </div>
+</div>
 
-        <!-- Assistente IA -->
-        <div id="aiAssistant" class="ai-assistant">
-            <div class="ai-title">🤖 ALICE - ASSISTENTE IA</div>
-            <div id="aiMessage">Use WASD ou setas para mover e E para interagir</div>
+<!-- Desafio -->
+<div id="challengeBox" class="dialog-box">
+    <div class="dialog-content">
+        <button class="close-btn" onclick="cancelChallenge()">×</button>
+        <h3>🎯 DESAFIO</h3>
+        <p id="challengeQuestion"></p>
+        <input type="text" id="challengeInput" placeholder="Digite sua resposta...">
+        <div class="dialog-buttons">
+            <button class="pixel-button" onclick="submitChallenge()">Enviar</button>
+            <button class="pixel-button" onclick="cancelChallenge()">Cancelar</button>
         </div>
+    </div>
+</div>
 
-        <!-- Desafio Criptográfico -->
-        <div id="challengeBox" class="challenge-box">
-            <div class="challenge-title">DESAFIO CRIPTOGRÁFICO</div>
-            <div id="challengeQuestion">Pergunta aparecerá aqui</div>
-            <input type="text" id="challengeInput" class="challenge-input" placeholder="Digite sua resposta...">
-            <div class="challenge-buttons">
-                <button class="pixel-button" onclick="submitChallenge()">Enviar</button>
-                <button class="pixel-button cancel-btn" onclick="cancelChallenge()">Cancelar</button>
-            </div>
-        </div>
-
+<!-- Assistente IA-->
+<div id="aiAssistant" class="ai-assistant">
+    <button class="close-btn" onclick="hideAIMessage()">×</button>
+    <div id="aiMessage"></div>
+</div>
         <!-- Tela de Carregamento -->
         <div id="loadingScreen" class="loading-screen">
             <div class="loading-text">Carregando Criptografia & IA...</div>
