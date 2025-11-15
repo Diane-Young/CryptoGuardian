@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRIPT Entertainment OS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <
+    
+    <div
+      id="game-area"
+      style="
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 600px;
+        border: 2px solid #00ff7f;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 255, 150, 0.3);
+      "
+    ></div>
+
+    <div class="terminal-window">
+      <div id="terminal-output">
+        <div class="line green">CRIPT Entertainment OS [v1.0]</div>
+        <div class="line">
+          Type <span class="yellow">'help'</span> for available commands.
+        </div>
+        <br />
+      </div>
+
+      <div class="input-line">
+        <span class="prompt">cript@entertainment:~$</span>
+        <input
+          id="terminal-input"
+          type="text"
+          autofocus
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

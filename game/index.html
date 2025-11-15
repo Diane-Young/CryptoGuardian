@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia & IA: O Legado de Turing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+<!-- Dialogo -->
+<div id="dialogBox" class="dialog-box">
+    <div class="dialog-content">
+        <button class="close-btn" onclick="hideDialog()">×</button>
+        <h3 id="dialogName"></h3>
+        <p id="dialogText"></p>
+        <div class="dialog-buttons">
+            <button class="pixel-button" onclick="nextDialog()">Continuar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Desafio -->
+<div id="challengeBox" class="dialog-box">
+    <div class="dialog-content">
+        <button class="close-btn" onclick="cancelChallenge()">×</button>
+        <h3>🎯 DESAFIO</h3>
+        <p id="challengeQuestion"></p>
+        <input type="text" id="challengeInput" placeholder="Digite sua resposta...">
+        <div class="dialog-buttons">
+            <button class="pixel-button" onclick="submitChallenge()">Enviar</button>
+            <button class="pixel-button" onclick="cancelChallenge()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Assistente IA-->
+<div id="aiAssistant" class="ai-assistant">
+    <button class="close-btn" onclick="hideAIMessage()">×</button>
+    <div id="aiMessage"></div>
+</div>
+        <!-- Tela de Carregamento -->
+        <div id="loadingScreen" class="loading-screen">
+            <div class="loading-text">Carregando Criptografia & IA...</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

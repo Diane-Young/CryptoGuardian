@@ -1,0 +1,126 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+  font-family: "Consolas", "Courier New", monospace;
+  color: #d0d0d0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Terminal Window === */
+/* Terminal maximizado (estado inicial) */
+.terminal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background-color: #0b0b0b;
+  border: 2px solid #00ff7f;
+  border-radius: 10px;
+  padding: 15px 20px;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+}
+
+/* Terminal minimizado (aparece no canto) */
+.terminal-minimized {
+  width: 350px !important;
+  height: 250px !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+/* Scrollbar estilo terminal */
+.terminal-window::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-window::-webkit-scrollbar-thumb {
+  background: #006400;
+  border-radius: 10px;
+}
+
+/* === Cores estilo Bash === */
+.green {
+  color: #00ff7f;
+}
+.yellow {
+  color: #f1c40f;
+}
+.red {
+  color: #ff5555;
+}
+.cyan {
+  color: #00e5ff;
+}
+.magenta {
+  color: #ff00aa;
+}
+.blue {
+  color: #6ab0f3;
+}
+
+.line {
+  margin: 2px 0;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #00ff7f;
+  margin-right: 6px;
+}
+
+/* === Input === */
+.input-line {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #00ff7f;
+}
+
+/* Cursor piscando */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.1%,
+  100% {
+    opacity: 0;
+  }
+}
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background: #00ff7f;
+  animation: blink 1s infinite;
+}
+
+/* === Responsividade === */
+@media (max-width: 600px) {
+  .terminal-window {
+    height: 90vh;
+    font-size: 0.9rem;
+  }
+}
